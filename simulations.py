@@ -5,7 +5,6 @@ from gan import *
 from oja import *
 from joblib import Parallel, delayed
 import matplotlib.pyplot as plt
-from autoencoder_simulation import *
 
 N = 10
 n = 200
@@ -54,12 +53,7 @@ for i in range(1000):
 grouse_sims = Parallel(n_jobs=5, verbose=10)(delayed(run_GROUSE_simulation)(n, T, d, U, V, lr, eta_true, sigma_true, 45) for i in range(N))
 past_sims = Parallel(n_jobs=5, verbose=10)(delayed(run_PAST_simulation)(n, T, d, U, V, delta, lam, eta_true, sigma_true, 45) for i in range(N))
 gan_sims = Parallel(n_jobs=5, verbose=10)(delayed(run_GAN_simulation)(n, T, d, U, V, w, gen_lr, disc_lr, eta_true, eta_gen, sigma_true, sigma_gen, 45) for i in range(N))
-# ae_sims = Parallel(n_jobs=5, verbose=10)(delayed(run_Autoencoder_simulation)(n, T, d, U, V, ae_lr, eta_true, sigma_true, 45) for i in range(N))
 oja_sims = Parallel(n_jobs=5, verbose=10)(delayed(run_Oja_simulation)(n, T, d, U, V, oja_lr, eta_true, sigma_true, 45) for i in range(N))
-# petrels_sims = Parallel(n_jobs=5, verbose=10)(delayed(run_PETRELS_simulation)(n, T, d, U, V, delta, lam, eta_true, sigma_true, 45) for i in range(N))
-# grouse_sims = run_GROUSE_simulation(n, T, d, U, V, lr, eta_true, sigma_true, 45)
-# grouse_sims = 0
-# past_sims = run_PAST_simulation(n, T, d, U, V, delta, lam, eta_true, sigma_true, 45)
 
 recon_errors_grouse = np.array([grouse_sims[i][0] for i in range(len(grouse_sims))])
 grassmann_errors_grouse = np.array([grouse_sims[i][1] for i in range(len(grouse_sims))])
