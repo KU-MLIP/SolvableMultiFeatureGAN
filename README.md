@@ -6,11 +6,12 @@ Andrew Bond, Zafer Dogan
 
 ## Algorithms
 The files `oja.py`, `past.py`, `petrels.py`, `grouse.py`, and `gan.py` all contain the empirical implementations of the different algorithms. The simulations can be run with the `simulations.py` file.
-
+### MNIST Results
 <p align="center">
   <img src="./figures/comparisons.png">
 </p>
 
+### Olivetti Faces (Eigenfaces) results
 For testing specifically on the eigenfaces (Olivetti Faces) dataset, the `eigenface_training.ipynb` jupyter notebook can be used.
 
 <p align="center">
