@@ -14,7 +14,7 @@ The files `oja.py`, `past.py`, `petrels.py`, `grouse.py`, and `gan.py` all conta
 For testing specifically on the eigenfaces (Olivetti Faces) dataset, the `eigenface_training.ipynb` jupyter notebook can be used.
 
 <p align="center">
-  <img src="./figures/olivetti_faces.png">
+  <img height=500 src="./figures/olivetti_faces.png">
 </p>
 
 ## ODE
